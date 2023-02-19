@@ -29,6 +29,7 @@
   "devDependencies": {
     "@babel/types": "^7.18.9",
     "@types/node": "^18.0.6",
+    "@types/web-bluetooth": "^0.0.16",
     "@vitejs/plugin-vue": "^3.0.1",
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
