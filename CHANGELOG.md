@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/gimyboya/vue-moon/compare/v1.0.1...v1.0.2) (2023-02-19)
+
+
+### Bug Fixes
+
+* hot fix to the entry file ([62d66d0](https://github.com/gimyboya/vue-moon/commit/62d66d0e1b04265ff3d20d404525a290dc7bc84b))
+
 ## [1.0.1](https://github.com/gimyboya/vue-moon/compare/v1.0.0...v1.0.1) (2023-02-19)
 
 
