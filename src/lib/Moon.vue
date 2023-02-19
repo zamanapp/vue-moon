@@ -46,7 +46,7 @@
       <text class="origin-center" :transform="`rotate(-${monthsRotation})`">
         <textPath
           class="font-mono text-6xl fill-gray-300"
-          :textLength="2 * Math.PI * (moonSize + moonSize / 2)"
+          :textLength="monthsTextLength"
           href="#months"
         >
           {{ months.split(month)[0] }}
@@ -58,7 +58,7 @@
         <textPath
           class="font-mono text-6xl fill-gray-300"
           side="right"
-          :textLength="2 * Math.PI * (moonSize + moonSize / 4)"
+          :textLength="daysTextLength"
           href="#days"
         >
           {{ days.split(String(day))[0] }}
@@ -84,6 +84,8 @@
         :stroke-width="border"
       ></use>
       <use :fill="fill" href="#crescent" class="disc" />
+      <!-- <rect width="3px" height="100%" :x="maxDimension / 2" fill="red" />
+      <rect width="100%" height="3px" :y="maxDimension / 2" fill="red" /> -->
     </svg>
   </div>
 </template>
@@ -94,10 +96,12 @@ import { PropType } from "vue";
 const propsConfig = {
   size: {
     type: Number,
+    default: 348,
     required: false,
   },
   lineWeight: {
     type: Number,
+    default: 14,
     required: false,
   },
   moonDegree: {
@@ -105,7 +109,8 @@ const propsConfig = {
     required: false,
   },
   flip: {
-    type: Number,
+    type: Boolean,
+    default: false,
     required: false,
   },
   date: {
@@ -197,13 +202,31 @@ function circleToPath(cx: number, cy: number, r: number) {
 const monthsRotation = computed(() => {
   const unit = 360 / months.value.length;
   const index = months.value.search(month.value);
-  return unit * index;
+  return (
+    unit * (index - months.value.length / 4 + month.value.length / 2) -
+    month.value.length / 2 -
+    1 // the one represent the dot attached to each month we want to subtract so that the centring ignore it
+  );
 });
 
 const daysRotation = computed(() => {
   const unit = 360 / days.value.length;
   const index = days.value.search(day.value);
-  return unit * index;
+  return (
+    unit * (index - days.value.length / 4 + day.value.length / 2) -
+    day.value.length / 2
+  );
+});
+
+const monthsTextLength = computed(() => {
+  const circumference = 2 * Math.PI * (moonSize.value + moonSize.value / 2);
+  const unit = circumference / months.value.length;
+  return circumference - unit;
+});
+const daysTextLength = computed(() => {
+  const circumference = 2 * Math.PI * (moonSize.value + moonSize.value / 4);
+  const unit = circumference / days.value.length;
+  return circumference - unit;
 });
 
 const rotation = computed(() =>
@@ -214,9 +237,13 @@ const rotation = computed(() =>
 
 const moonDeg = computed(() => `${rotation.value}deg`);
 
-const flipValue = computed(() =>
-  props.flip ? props.flip : rotation.value > 180 ? 0 : maxDimension.value / 2
-);
+const flipValue = computed(() => {
+  if (props.flip) {
+    return rotation.value > 180 ? 0 : maxDimension.value / 2;
+  } else {
+    return rotation.value > 180 ? maxDimension.value / 2 : 0;
+  }
+});
 
 const fill = computed(() =>
   rotation.value >= 90 && rotation.value <= 270 ? "white" : "black"
