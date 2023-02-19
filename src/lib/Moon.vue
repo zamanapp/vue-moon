@@ -1,101 +1,99 @@
 <template>
-  <div class="relative flex items-center justify-center">
-    <svg
-      :width="sizePx"
-      :height="sizePx"
-      :viewBox="`0 0 ${maxDimension} ${maxDimension}`"
-    >
-      <defs>
-        <circle
-          id="moon"
-          :cx="maxDimension / 2"
-          :cy="maxDimension / 2"
-          :r="outerSize"
-        />
-        <circle
-          id="crescent"
-          :cx="maxDimension / 2"
-          :cy="maxDimension / 2"
-          :r="moonSize"
-        />
-        <clipPath id="clip-moon">
-          <use xlink:href="#crescent" />
-        </clipPath>
-        <path
-          id="months"
-          :d="
-            circleToPath(
-              maxDimension / 2,
-              maxDimension / 2,
-              moonSize + moonSize / 2
-            )
-          "
-        />
-        <path
-          id="days"
-          :d="
-            circleToPath(
-              maxDimension / 2,
-              maxDimension / 2,
-              moonSize + moonSize / 4
-            )
-          "
-        />
-      </defs>
-
-      <text
-        v-if="showGuide"
-        class="origin-center"
-        :transform="`rotate(-${monthsRotation})`"
-      >
-        <textPath
-          class="font-mono text-7xl fill-gray-300"
-          :textLength="monthsTextLength"
-          href="#months"
-        >
-          {{ months.split(month)[0] }}
-          <tspan class="font-semibold fill-black" dy="0">{{ month }}</tspan>
-          {{ months.split(month)[1] }}
-        </textPath>
-      </text>
-      <text
-        v-if="showGuide"
-        class="origin-center"
-        :transform="`rotate(-${daysRotation})`"
-      >
-        <textPath
-          class="font-mono text-6xl fill-gray-300"
-          side="right"
-          :textLength="daysTextLength"
-          href="#days"
-        >
-          {{ days.split(String(day))[0] }}
-          <tspan class="font-semibold fill-black" dy="0">{{ day }}</tspan>
-          {{ days.split(String(day))[1] }}
-        </textPath>
-      </text>
-
-      <rect
-        class="illusion"
-        clip-path="url(#clip-moon)"
-        width="50%"
-        height="100%"
-        :x="flipValue"
-        fill="black"
+  <svg
+    :width="sizePx"
+    :height="sizePx"
+    :viewBox="`0 0 ${maxDimension} ${maxDimension}`"
+  >
+    <defs>
+      <circle
+        id="moon"
+        :cx="maxDimension / 2"
+        :cy="maxDimension / 2"
+        :r="outerSize"
       />
+      <circle
+        id="crescent"
+        :cx="maxDimension / 2"
+        :cy="maxDimension / 2"
+        :r="moonSize"
+      />
+      <clipPath id="clip-moon">
+        <use xlink:href="#crescent" />
+      </clipPath>
+      <path
+        id="months"
+        :d="
+          circleToPath(
+            maxDimension / 2,
+            maxDimension / 2,
+            moonSize + moonSize / 2
+          )
+        "
+      />
+      <path
+        id="days"
+        :d="
+          circleToPath(
+            maxDimension / 2,
+            maxDimension / 2,
+            moonSize + moonSize / 4
+          )
+        "
+      />
+    </defs>
 
-      <use
-        fill="white"
-        fill-opacity="0"
-        stroke="black"
-        href="#moon"
-        :stroke-width="lineWeight"
-      ></use>
-      <use :fill="fill" href="#crescent" class="disc" />
-      <!-- <rect width="3px" height="100%" :x="maxDimension / 2" fill="red" />
+    <text
+      v-if="showGuide"
+      class="origin-center"
+      :transform="`rotate(-${monthsRotation})`"
+    >
+      <textPath
+        class="font-mono text-7xl fill-gray-300"
+        :textLength="monthsTextLength"
+        href="#months"
+      >
+        {{ months.split(month)[0] }}
+        <tspan class="font-semibold fill-black" dy="0">{{ month }}</tspan>
+        {{ months.split(month)[1] }}
+      </textPath>
+    </text>
+    <text
+      v-if="showGuide"
+      class="origin-center"
+      :transform="`rotate(-${daysRotation})`"
+    >
+      <textPath
+        class="font-mono text-6xl fill-gray-300"
+        side="right"
+        :textLength="daysTextLength"
+        href="#days"
+      >
+        {{ days.split(String(day))[0] }}
+        <tspan class="font-semibold fill-black" dy="0">{{ day }}</tspan>
+        {{ days.split(String(day))[1] }}
+      </textPath>
+    </text>
+
+    <rect
+      class="illusion"
+      clip-path="url(#clip-moon)"
+      width="50%"
+      height="100%"
+      :x="flipValue"
+      fill="black"
+    />
+
+    <use
+      fill="white"
+      fill-opacity="0"
+      stroke="black"
+      href="#moon"
+      :stroke-width="lineWeight"
+    ></use>
+    <use :fill="fill" href="#crescent" class="disc" />
+    <!-- <rect width="3px" height="100%" :x="maxDimension / 2" fill="red" />
       <rect width="100%" height="3px" :y="maxDimension / 2" fill="red" /> -->
-    </svg>
-  </div>
+  </svg>
 </template>
 
 <script lang="ts">
