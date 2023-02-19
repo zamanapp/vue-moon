@@ -24,7 +24,7 @@ A Vue component to accurately display moon phases. calculations are made based o
 # 🚀 Features
 
 - 🌘 Show current moon phase
-- 🌖 Show a specific date moon phase (Gregorian and Hijri)
+- 🌖 Show a specific date moon phase (Gregorian and Soon Hijri)
 - 📐 Accept a specific degree (custom calculations)
 - 📅 Accept [different Hijri calendars](https://cldr.unicode.org/development/development-process/design-proposals/islamic-calendar-types)
 - 🌔 Support different views (upper hemisphere and lower hemisphere)
@@ -55,14 +55,14 @@ The most basic usage is to import the component and use it directly. this will d
 
 ### Props
 
-| name       | description                                                                                                                            | required | type                                                                                   | default                              |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------------------------------------------------------------------------------------- | ------------------------------------ |
-| moonSize   | the size of the moon                                                                                                                   | false    | number                                                                                 | 348                                  |
-| lineWeight | the line width around the moon                                                                                                         | false    | number                                                                                 | 14                                   |
-| moonDegree | if set the moon inner disc will rotate to that degree                                                                                  | false    | number                                                                                 | current moon phase degree (reactive) |
-| flip       | is set to true the moon will flip to depict the northen himispher view                                                                 | false    | boolean                                                                                | false                                |
-| date       | if set, the component will calculat the moon phase of that date                                                                        | false    | number \| string \| Date                                                               | now (reactive)                       |
-| calendar   | allow to use [other hijri calendars](https://cldr.unicode.org/development/development-process/design-proposals/islamic-calendar-types) | false    | "islamic" \| "islamic-civil" \| "islamic-tbla" \| "islamic-umalqura" \| "islamic-rgsa" | "islamic-umalqura"                   |
+| name       | description                                                                                                                                  | required | type                                                                                   | default                              |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------------------------------------------------------------------------------------- | ------------------------------------ |
+| moonSize   | the size of the moon in pixels                                                                                                               | false    | number                                                                                 | 348                                  |
+| lineWeight | the line width around the moon in pixels                                                                                                     | false    | number                                                                                 | 14                                   |
+| moonDegree | if set the moon inner disc will rotate to that degree. useful for custom calculations                                                        | false    | number                                                                                 | current moon phase degree (reactive) |
+| flip       | if set to true the moon will flip to depict the northern hemisphere view                                                                     | false    | boolean                                                                                | false                                |
+| date       | if set, the component will calculate the moon phase base of that date                                                                        | false    | number \| string \| Date                                                               | now (reactive)                       |
+| calendar   | allow the usage of [other hijri calendars](https://cldr.unicode.org/development/development-process/design-proposals/islamic-calendar-types) | false    | "islamic" \| "islamic-civil" \| "islamic-tbla" \| "islamic-umalqura" \| "islamic-rgsa" | "islamic-umalqura"                   |
 
 ### Events
 
