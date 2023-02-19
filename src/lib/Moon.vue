@@ -45,7 +45,7 @@
 
       <text class="origin-center" :transform="`rotate(-${monthsRotation})`">
         <textPath
-          class="font-mono text-6xl fill-gray-300"
+          class="font-mono text-7xl fill-gray-300"
           :textLength="monthsTextLength"
           href="#months"
         >
