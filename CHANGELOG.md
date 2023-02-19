@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/gimyboya/vue-moon/compare/v1.0.0...v1.0.1) (2023-02-19)
+
+
+### Bug Fixes
+
+* this is to trigger a release to npm ([01694b8](https://github.com/gimyboya/vue-moon/commit/01694b879e7dcce76a1aaac117c0e1e4b5f7bfeb))
+
 # 1.0.0 (2023-02-19)
 
 
