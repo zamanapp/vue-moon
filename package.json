@@ -5,6 +5,10 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gimyboya/vue-moon"
+  },
   "main": "./dist/ayah-vue.umd.js",
   "module": "./dist/ayah-vue.es.js",
   "exports": {
