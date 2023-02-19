@@ -2,10 +2,10 @@
 
 <p align="center">
 <a href="https://github.com/gimyboya/vue-moon#gh-light-mode-only">
-  <img src="https://raw.githubusercontent.com/gimyboya/vue-moon/master/public/screenshot.png#gh-light-mode-only" alt="Vue-Moon - Accurately display the moon phase" width="300">
+  <img src="https://raw.githubusercontent.com/gimyboya/vue-moon/master/public/Screenshot.png#gh-light-mode-only" alt="Vue-Moon - Accurately display the moon phase" width="300">
 </a>
 <a href="https://github.com/vueuse/vueuse#gh-dark-mode-only">
-  <img src="https://raw.githubusercontent.com/vueuse/vueuse/main/packages/public/logo-vertical-dark.png#gh-dark-mode-only" alt="Vue-Moon - Accurately display the moon phase" width="300">
+  <img src="https://raw.githubusercontent.com/gimyboya/vue-moon/master/public/Screenshot.png#gh-dark-mode-only" alt="Vue-Moon - Accurately display the moon phase" width="300">
 </a>
 <br>
 Accurately display the moon phase

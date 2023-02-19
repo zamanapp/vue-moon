@@ -43,7 +43,11 @@
         />
       </defs>
 
-      <text class="origin-center" :transform="`rotate(-${monthsRotation})`">
+      <text
+        v-if="showGuide"
+        class="origin-center"
+        :transform="`rotate(-${monthsRotation})`"
+      >
         <textPath
           class="font-mono text-7xl fill-gray-300"
           :textLength="monthsTextLength"
@@ -54,7 +58,11 @@
           {{ months.split(month)[1] }}
         </textPath>
       </text>
-      <text class="origin-center" :transform="`rotate(-${daysRotation})`">
+      <text
+        v-if="showGuide"
+        class="origin-center"
+        :transform="`rotate(-${daysRotation})`"
+      >
         <textPath
           class="font-mono text-6xl fill-gray-300"
           side="right"
@@ -121,6 +129,11 @@ const propsConfig = {
     type: String,
     required: false,
     default: Intl.DateTimeFormat().resolvedOptions().calendar,
+  },
+  showGuide: {
+    type: Boolean,
+    require: false,
+    default: false,
   },
 };
 </script>
