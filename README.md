@@ -1,20 +1,17 @@
-# Ayah-Vue
+# Vue-Moon
 
 <!-- TODO: centred screenshot -->
 
-An Elegant Component to display an Ayah or a passage from the [Quran](https://www.quran.com/).
+A Vue component to accurately display moon phases. caluclations are made based on the Hijri calendar which is a moon based calendar.
 
 Features
 
-- [x] Accept one or a passage of verses
-- [ ] Highlights desired text
-- [ ] Tafseer
-- [x] Translation
-- [ ] Transliteration
-- [ ] Audio
-- [ ] Theming
-- [ ] Light/Dark theme
-- [ ] I18n
+- Show current moon phase
+- Show a specific date moon phase (Gregorian and Hijri)
+- Accept a specific degree (custom calculations)
+- Accept different Hijri calendars
+- Support different views (upper hemisphere and lower hemisphere)
+- SVG based
 
 <!-- Note about Vue2 and 3 Compatibility -->
 
@@ -29,36 +26,12 @@ yarn add ayah-vue # or npm install ayah-vue
 The most basic usage
 
 ```html
-<Suspense>
-  <Ayah ayat="6:116" :translation="sahih" />
-  <template #fallback>
-    <p>loading...</p>
-  </template>
-</Suspense>
+<template>
+  <Moon />
+</template>
 
 <script setup>
-  import { Ayah, Translations } from "Ayah-vue";
-
-  const sahih = Translations.EN_SAHIH_INTERNATIONAL;
-</script>
-```
-
-Notice that we use the `Suspense` component as it's needed to display the loading state before data is fetched
-
-The `ayat` prop accept a single aya or range of ayat with the following syntax `sura:[start-end]` for example:
-
-```html
-<Suspense>
-  <Ayah ayat="23:[71-73]" :translation="sahih" />
-  <template #fallback>
-    <p>loading...</p>
-  </template>
-</Suspense>
-
-<script setup>
-  import { Ayah, Translations } from "Ayah-vue";
-
-  const sahih = Translations.EN_SAHIH_INTERNATIONAL;
+  import { Moon } from "vue-moon";
 </script>
 ```
 
@@ -70,6 +43,4 @@ The `ayat` prop accept a single aya or range of ayat with the following syntax `
 
 ## Credits
 
-https://quran.api-docs.io/v4/getting-started/introduction
-https://digitalkhatt.org/about
-Khalid
+https://webspace.science.uu.nl/~gent0113/islam/ummalqura.htm
