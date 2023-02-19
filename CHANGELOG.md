@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/gimyboya/vue-moon/compare/v1.0.2...v1.0.3) (2023-02-19)
+
+
+### Bug Fixes
+
+* add type definitions to the package ([9e583b7](https://github.com/gimyboya/vue-moon/commit/9e583b7b0bdce31bc4ff1f037714d6b959020a2a))
+
 ## [1.0.2](https://github.com/gimyboya/vue-moon/compare/v1.0.1...v1.0.2) (2023-02-19)
 
 
