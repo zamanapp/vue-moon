@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@antfu/ni': ^0.20.0
   '@babel/types': ^7.18.9
   '@js-temporal/polyfill': ^0.4.3
   '@types/node': ^18.0.6
@@ -21,6 +22,7 @@ dependencies:
   vue: 3.2.47
 
 devDependencies:
+  '@antfu/ni': 0.20.0
   '@babel/types': 7.20.7
   '@types/node': 18.14.0
   '@types/web-bluetooth': 0.0.16
@@ -33,6 +35,11 @@ devDependencies:
   vue-tsc: 0.39.5_typescript@4.9.5
 
 packages:
+
+  /@antfu/ni/0.20.0:
+    resolution: {integrity: sha512-mBgAuq2b0daSA/14LMyjEjaInD7/Zd7KVXZge7bQPKmtQJFqy9/pWBml6DMkMreeHQEomMtIbbeqReNJ/74kjA==}
+    hasBin: true
+    dev: true
 
   /@babel/helper-string-parser/7.19.4:
     resolution: {integrity: sha512-nHtDoQcuqFmwYNYPz3Rah5ph2p8PFeFCsZk9A/48dPc/rGocJ5J3hAAZ7pb76VWX3fZKu+uEr/FhH5jLx7umrw==}

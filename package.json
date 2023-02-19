@@ -31,6 +31,7 @@
     "vue": "^3.2.47"
   },
   "devDependencies": {
+    "@antfu/ni": "^0.20.0",
     "@babel/types": "^7.18.9",
     "@types/node": "^18.0.6",
     "@types/web-bluetooth": "^0.0.16",
