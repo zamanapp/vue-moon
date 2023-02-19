@@ -8,7 +8,7 @@
   <img src="https://raw.githubusercontent.com/gimyboya/vue-moon/main/public/Screenshot.png#gh-dark-mode-only" alt="Vue-Moon - Accurately display the moon phase" width="300">
 </a>
 <br>
-Accurately display the moon phase
+Accurately display the moon phases
 </p>
 
 <p align="center">
