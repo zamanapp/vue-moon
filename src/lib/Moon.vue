@@ -89,7 +89,7 @@
         fill-opacity="0"
         stroke="black"
         href="#moon"
-        :stroke-width="border"
+        :stroke-width="lineWeight"
       ></use>
       <use :fill="fill" href="#crescent" class="disc" />
       <!-- <rect width="3px" height="100%" :x="maxDimension / 2" fill="red" />
@@ -100,9 +100,10 @@
 
 <script lang="ts">
 import { PropType } from "vue";
+import { Calendars, calendarsValues } from "./Calendars";
 
 const propsConfig = {
-  size: {
+  moonSize: {
     type: Number,
     default: 348,
     required: false,
@@ -126,9 +127,12 @@ const propsConfig = {
     required: false,
   },
   calendar: {
-    type: String,
+    type: String as PropType<Calendars>,
     required: false,
-    default: Intl.DateTimeFormat().resolvedOptions().calendar,
+    validator(value: Calendars) {
+      return calendarsValues.includes(value);
+    },
+    default: Calendars.UMM_AL_QURA,
   },
   showGuide: {
     type: Boolean,
@@ -149,17 +153,18 @@ import { useNow } from "@vueuse/core";
 // http://jsfiddle.net/alnitak/ah1k1mo3/
 const props = defineProps(propsConfig);
 
-const moonSize = computed(() => (props.size ? props.size : 250));
-const border = computed(() => (props.lineWeight ? props.lineWeight : 4));
-const sizePx = computed(() => `${moonSize.value}px`);
-const outerSize = computed(() => moonSize.value + border.value / 2 - 1);
-const maxDimension = computed(() => moonSize.value * 4);
-
+const sizePx = computed(() => `${props.moonSize}px`);
+const outerSize = computed(() => props.moonSize + props.lineWeight / 2 - 1);
+const maxDimension = computed(() => props.moonSize * 4);
 const date = computed(() => (props.date ? new Date(props.date) : useNow()));
-unref(date.value).toTemporalInstant = toTemporalInstant;
-const cal = ref(Temporal.Calendar.from("islamic-umalqura"));
+const cal = ref(
+  Temporal.Calendar.from(
+    props.calendar ? props.calendar : Calendars.UMM_AL_QURA
+  )
+);
 
-// Intl.toLocaleString('en-US', { calendar: cal.value, month: 'long' })
+unref(date.value).toTemporalInstant = toTemporalInstant;
+
 const temporalDate = unref(date.value).toTemporalInstant().toZonedDateTime({
   calendar: cal.value,
   timeZone: Temporal.Now.timeZone(),
@@ -232,12 +237,13 @@ const daysRotation = computed(() => {
 });
 
 const monthsTextLength = computed(() => {
-  const circumference = 2 * Math.PI * (moonSize.value + moonSize.value / 2);
+  const circumference = 2 * Math.PI * (props.moonSize + props.moonSize / 2);
   const unit = circumference / months.value.length;
   return circumference - unit;
 });
+
 const daysTextLength = computed(() => {
-  const circumference = 2 * Math.PI * (moonSize.value + moonSize.value / 4);
+  const circumference = 2 * Math.PI * (props.moonSize + props.moonSize / 4);
   const unit = circumference / days.value.length;
   return circumference - unit;
 });
