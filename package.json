@@ -9,12 +9,12 @@
     "type": "git",
     "url": "git+https://github.com/gimyboya/vue-moon"
   },
-  "main": "./dist/ayah-vue.umd.js",
-  "module": "./dist/ayah-vue.es.js",
+  "main": "./dist/vue-moon.umd.js",
+  "module": "./dist/vue-moon.es.js",
   "exports": {
     ".": {
-      "import": "./dist/ayah-vue.es.js",
-      "require": "./dist/ayah-vue.umd.js"
+      "import": "./dist/vue-moon.es.js",
+      "require": "./dist/vue-moon.umd.js"
     }
   },
   "scripts": {
