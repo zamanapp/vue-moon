@@ -249,7 +249,7 @@ const daysTextLength = computed(() => {
 const rotation = computed(() =>
   props.moonDegree || props.moonDegree === 0
     ? props.moonDegree
-    : (temporalDate.day * 360) / temporalDate.daysInMonth
+    : (temporalDate.day * 360) / (temporalDate.daysInMonth + 1)
 );
 
 const moonDeg = computed(() => `${rotation.value}deg`);

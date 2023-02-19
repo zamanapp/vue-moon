@@ -1,12 +1,7 @@
 <template>
   <div>
     Component Playground
-    <Moon
-      show-guide
-      :moon-degree="moonDeg"
-      :moon-size="moonSize"
-      :line-weight="borderWidth"
-    />
+    <Moon show-guide :moon-size="moonSize" :line-weight="borderWidth" />
     <div class="absolute bottom-0 w-full">
       <h2 class="my-3 text-xl font-semibold">Configuration</h2>
       <div class="flex mb-3 align-middle">
