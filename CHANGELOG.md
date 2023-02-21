@@ -1,3 +1,11 @@
+## [1.0.6](https://github.com/gimyboya/vue-moon/compare/v1.0.5...v1.0.6) (2023-02-21)
+
+
+### Bug Fixes
+
+* add namespaces ([40c7798](https://github.com/gimyboya/vue-moon/commit/40c7798a2aaeba8153b7bc31a19a58024c718001))
+* add namespaces ([077760d](https://github.com/gimyboya/vue-moon/commit/077760d36a6a7b3ebdb910ccc5b911a15980b7ce))
+
 ## [1.0.5](https://github.com/gimyboya/vue-moon/compare/v1.0.4...v1.0.5) (2023-02-19)
 
 
