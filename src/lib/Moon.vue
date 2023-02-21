@@ -47,7 +47,7 @@
     <text
       v-if="showGuide"
       class="origin-center"
-      :transform="`rotate(-${monthsRotation})`"
+      :transform="`rotate(${-monthsRotation})`"
     >
       <textPath
         class="font-mono text-7xl fill-gray-300"
@@ -62,7 +62,7 @@
     <text
       v-if="showGuide"
       class="origin-center"
-      :transform="`rotate(-${daysRotation})`"
+      :transform="`rotate(${-daysRotation})`"
     >
       <textPath
         class="font-mono text-6xl fill-gray-300"
