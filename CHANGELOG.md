@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/gimyboya/vue-moon/compare/v1.0.6...v1.0.7) (2023-02-21)
+
+
+### Bug Fixes
+
+* fix rotation issue ([1a14b8a](https://github.com/gimyboya/vue-moon/commit/1a14b8a7241d727c6bfbbc96a33313029c0e2215))
+
 ## [1.0.6](https://github.com/gimyboya/vue-moon/compare/v1.0.5...v1.0.6) (2023-02-21)
 
 
