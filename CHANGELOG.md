@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/gimyboya/vue-moon/compare/v1.0.4...v1.0.5) (2023-02-19)
+
+
+### Bug Fixes
+
+* add a day to the rotation calculations ([f018bd6](https://github.com/gimyboya/vue-moon/commit/f018bd6f92fb31b8a3f48c54eac4bb3fcb80e0c5))
+
 ## [1.0.4](https://github.com/gimyboya/vue-moon/compare/v1.0.3...v1.0.4) (2023-02-19)
 
 
